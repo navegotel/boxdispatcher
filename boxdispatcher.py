@@ -4,7 +4,7 @@ from settings import targets
 import logging
 import os
 
-logfolder = '/home/markusbarth/webapps/boxdispatcher'
+logfolder = '/home/markus/boxdispatcher'
 logging.basicConfig(filename=os.path.join(logfolder,'dispatch.log'),
                     level=logging.INFO
                     )
