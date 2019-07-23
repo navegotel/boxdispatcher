@@ -13,50 +13,21 @@ class Params(object):
             authstr += base64.b64encode('{0}:{1}'.format('Hotelplan', '627257').encode())
             self.headers['Authorization'] = authstr
 
-basepath = '/home/markusbarth/webapps/boxdispatcher/incoming'
+basepath = '/home/markus/boxdispatcher/incoming'
         
 targets = {Params
             (
                 os.path.join(basepath,'olympia/Olympia.zip'),
-                'http://35.204.76.157:1300',
+                'http://35.189.126.113:1300',
                 {
                     'content-type':'application/zip',
                     'player-datatype': 'hotelonly',
                     'player-msgtype':'Zip',
-                    'player-brand':'OLY',
-                    'add-command':'erase' 
-                },
-                (
-                    'Hotelplan',
-                    '627257'
-                )
-            ),
-          Params
-            (
-                os.path.join(basepath,'tui_brintest/cleartrip.zip'),
-                'http://35.193.196.136:1300',
-                {
-                    'content-type':'application/zip',
-                    'player-datatype': 'hotelonly',
-                    'player-msgtype':'Zip',
-                    'player-brand':'CLEARTRIP',
+                    'player-brand':'OLYB2C',
                     'add-command':'erase' 
                 },
                 None
             ),
-          Params
-            (
-                os.path.join(basepath,'tui_brintest/toureast.zip'),
-                'http://35.193.196.136:1300',
-                {
-                    'content-type':'application/zip',
-                    'player-datatype': 'hotelonly',
-                    'player-msgtype':'Zip',
-                    'player-brand':'TOUREAST',
-                    'add-command':'erase' 
-                },
-                None
-            )
         }
 
 
