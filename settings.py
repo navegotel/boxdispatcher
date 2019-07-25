@@ -10,7 +10,7 @@ class Params(object):
         self.headers = headers
         if authentication is not None:
             authstr = b'Basic '
-            authstr += base64.b64encode('{0}:{1}'.format('Hotelplan', '627257').encode())
+            authstr += base64.b64encode('{0}:{1}'.format(authentication[0], authentication[0]).encode())
             self.headers['Authorization'] = authstr
 
 basepath = '/home/markus/boxdispatcher/incoming'
@@ -27,7 +27,18 @@ targets = {Params
                     'add-command':'erase' 
                 },
                 None
-            ),
+            ), #Entry for Travellanda test
+         Params
+           (
+              os.path.join(basepath,'aircanada_travco/travco.zip'),
+              'https://preprocess-proxy.acv-test.peakwork-platform.com',
+              {
+                'Player-Environment': 'Box',
+                'Player-Brand': 'TRAVCO',
+                'Player-DataType': 'HotelOnly',
+                'Player-MsgType': 'Zip',
+              }
+              ('acv':'dvfas89uu3kjndfs78pas89m')
         }
 
 
